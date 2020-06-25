@@ -29,7 +29,7 @@ const HomeNavigator = createStackNavigator({
   Home: { screen: Home }
 }, 
 {
-  navigationOptions: {
+  defaultNavigationOptions: {
     headerStyle: {
         backgroundColor: "#512DA8"
     },
