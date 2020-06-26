@@ -15,16 +15,30 @@ function RenderHistory() {
     );
 }
 
-function RenderLeader({ item, index}) {
+function RenderLeader(props) {
+
+    const item = props.item;
+
+    const renderLeaderItem = ({item, index}) => {
+        return (
+            <ListItem
+                key={index}
+                title={item.name}
+                subtitle={item.description}
+                hideChevron={true}
+                leftAvatar={{ source: require('./images/alberto.png')}}
+            />
+        );
+    };
 
     return (
-        <ListItem
-            key={index}
-            title={item.name}
-            subtitle={item.description}
-            hideChevron={true}
-            leftAvatar={{ source: require('./images/alberto.png')}}
-        />
+        <Card title="Corporate Leadership">
+            <FlatList
+            data={item}
+            renderItem={renderLeaderItem}
+            keyExtractor={item => item.id.toString()}
+            />
+        </Card>
     );
 }
 
@@ -46,13 +60,7 @@ class About extends Component {
         return(
             <ScrollView>
                 <RenderHistory />
-                <Card title="Corporate Leadership">
-                    <FlatList
-                    data={this.state.leaders}
-                    renderItem={RenderLeader}
-                    keyExtractor={item => item.id.toString()}
-                    />
-                </Card>
+                <RenderLeader item={this.state.leaders} />
             </ScrollView>
         );
     }
