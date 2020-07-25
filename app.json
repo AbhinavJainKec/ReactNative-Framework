@@ -4,7 +4,7 @@
     "slug": "confusion",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -17,10 +17,16 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "net.food.confusion.confusion",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "net.food.confusion.confusion"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/AbhinavJainKec/ReactNative-Framework"
   }
 }
